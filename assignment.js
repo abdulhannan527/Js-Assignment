@@ -26,25 +26,26 @@ function feetToMile(feet){
     //    brickCalculator Start From Here
 
 
-function brickCalculator(n){
-    var firstFloor, secondFloor, thirdFloor;
-
-            if(n <= 10){
-                var firstFloor = n * 15000;
-                return totalResult;
-                }
-            else if (n == 11 && n <= 20){
-                var secondFloor = n * 12000;
-                return totalresult;
-            }
-            else {
-                var thirdFloor = n * 10000;
-                return totalresult;
-            } 
-    return Result 
-}
-var totalResult = brickCalculator(10)
-console.log(totalResult);
+    function brickCalculator(height){
+        var brick = 0;
+        if (height <= 10){
+            brick = height * 15000;
+        }else if (height <= 20){
+            var first10Floor = 10 * 15000;
+            var remaining = height - 10;
+            var second10Floor = remaining * 12000;
+            brick = first10Floor + second10Floor;
+        } else {
+             var first10Floor = 10 * 15000;
+             var second10Floor = 10 * 12000;
+             var remaining = height - 20;
+             var third25Floor = remaining * 10000;
+             brick = first10Floor + second10Floor + third25Floor;
+        }
+        return brick
+    }
+    var count = brickCalculator(45)
+    console.log(count);
 
 // tinyFriend Start From Here
 
